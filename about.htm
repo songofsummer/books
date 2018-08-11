@@ -1,0 +1,295 @@
+<!doctype html>
+<html>
+    <head>
+            <link href='https://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet'>
+        <style>
+            body{
+                margin:0;
+                padding:0;
+                font-family: "lucida Console";
+            }
+/*navigation*/
+            .nav {
+                width:0;
+                height:100%;
+                background-color:blue;
+                opacity:0.9;
+                position:fixed;
+                z-index:1;
+                top:0;
+                left:0;
+                overflow-x: hidden;
+                transition:0.5s;
+                margin-top:0;
+                margin-bottom:0;
+            }
+            .content{
+                position:relative;
+                width:100%;
+                text-align:center;
+                margin-top:30px;
+            }
+            .nav a{
+                color:rgb(25, 191, 233);
+                text-decoration:none;
+                font-size: 20px;
+                display: block;
+                transition:0.3s;
+            }
+            .nav a:hover{
+                font-size: 139%;
+                color:rgb(224, 238, 238);
+            }
+            .nav .closebtn{
+                position:absolute;
+                top:20px;
+                right:45px;
+                font-size:60px;
+            }
+            h2{
+                color:antiquewhite;
+                
+            }
+
+/*slideshow*/
+            .container{
+                width:100%;
+                color:white;
+                font-size:25px;
+                background: #131313;
+                float:right;
+                
+                position:relative;
+                box-sizing:border-box;
+                font-family: 'Calligraffitti','Courier New', Courier, monospace;
+
+            }
+            .myslides{
+                width:300px;
+                height:400px;
+                overflow:hidden;
+                margin-top: 25px;
+                margin-left:25px;
+                margin-right: 25px;
+                margin-bottom:25px;
+            }
+            .slideshow{
+                width:900px;
+                height:400px;
+                margin: 0 0 0 -600px;
+                position:relative;
+                -webkit-animation-name: slide_animation;
+                -webkit-animation-duration: 9s;
+                -webkit-animation-iteration-count: infinite;
+                -webkit-animation-direction: alternate;
+                -webkit-animation-play-state: running; 
+            }
+            .slide{
+                width:300px;
+                height:400px;
+                position:relative;
+                float:right;
+                overflow:hidden;
+            }
+            .slideshow img{
+                width:300px;
+                height:400px;
+            }
+            @-webkit-keyframes slide_animation{
+                0% {left:0px;}
+                10% {left:0px;}
+                20% {left:0px;}
+                30% {left:300px;}
+                40% {left:300px;}
+                50% {left:300px;}
+                60% {left:300px;}
+                70% {left:600px;}
+                80% {left:600px;}
+                90% {left:600px;}
+                100% {left:600px;}
+            }
+
+/*contact*/
+            .contact{
+                background-image:url(image/contact.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                height:auto;
+                margin:0;
+                padding-top:420px;
+                padding-left:20px;
+                padding-bottom:25px;
+                padding-right:20px;
+                color:#ffcccc;
+            }
+            input[type=text]{
+                margin-left:20px;
+                margin-top:10px;
+                padding-left:10px;
+                padding-top:10px;
+                height:3em;
+                background-color:#ffcccc;
+                border: none;
+                border-bottom:4px solid #990000;
+                border-radius: 2px;
+                color:blueviolet;
+                width:70%;
+                box-sizing:border-box;
+            }
+            input[type=submit]{
+                margin-left:20px;
+                background-color:#303030;
+                height:3em;
+                border:none;
+                border-radius:1px;
+                width:6em;
+                color:#ffcccc;
+                font-size:15px;
+            }
+            input[type=submit]:hover{
+                background-color: #000;
+                
+            }
+            textarea{
+                margin:20px;
+                padding-left:10px;
+                padding-top:10px;
+                height:6em;
+                background-color:#ffcccc;
+                border: none;
+                border-bottom:4px solid #990000;
+                color:#990000;
+                box-sizing: border-box;
+                width:70%;
+            }
+/*members*/
+            .memimg{
+                width:300px;
+                position:relative;
+                overflow:hidden;
+                margin:10px;
+            }
+            .memcard{
+                border-radius:50%;
+                width:300px;
+                opacity:1;
+                display:block;
+                transition: 0.5s ease;
+                backface-visibility: hidden;
+            }
+            .name{
+                opacity:0;
+                width:inherit;
+                top:50%;
+                position:absolute;
+                left:50%;
+                transition:0.5s ease;
+                transform:translate(-50%,-50%);
+                -ms- transform:translate(-50%,-50%);
+                text-align:center;
+            }
+            .text{
+                color:#000;
+                font-size: 20px;
+                padding:10px 10px;
+            }
+            .member:hover .name{
+                opacity:1;
+            }
+            .member:hover .memcard{
+                opacity:0.5;
+            }
+        </style>
+    </head>
+    <body>
+<!--navigation-->   
+        <div class="nav" id="navmenu">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav();" style="width:15px;height:20px;">&times;</a>
+            <div class="content">
+               <a href="http://www.iitbbs.ac.in" target="_blank" style="width:20%;margin-left:auto;margin-right:auto;"> <img src="image/logo.jpg"/></a>
+            <a href="#home" onclick="closeNav();">Introduction</a>
+            <a href="#contact" onclick="closeNav();">Contact us</a>
+            <a href="#members" onclick="closeNav();">Members</a>
+            <h2>web and design society<br>
+            IIT Bhubneswar</h2>
+            </div>
+        </div>
+        <div style="font-size:30px;color:aliceblue;background:#131313;width:100%;margin:0;">
+        <span onclick="openNav()">&#9776;goto</span>
+        </div>
+        
+
+        <a name="#home"></a>
+ <!--slideshow-->    
+        <div class="container">
+            <div class="myslides" style="float:left;">
+                <div class="slideshow">
+                    <div class="slide">
+                        <img src="image/web1.jpg"/>
+                    </div>
+                    <div class="slide">
+                        <img src="image/web2.jpg"/>
+                    </div>
+                    <div class="slide">
+                        <img src="image/web3.jpg"/>
+                    </div>
+                </div>
+            </div>
+            <div class="slidetext" style="float:left;width:500px;height:450px;text-align:center;vertical-align:middle;">
+                <div style=""><h1>Web and design<br>Society<br></h1>
+                    <h3>IIT Bhubaneswar</h3><br>
+                    We are web and design society of IIT Bhubaneswar. We welocme you in the online arena with your browser.
+                </div>
+                </div>
+        </div>
+
+<a name="#contact"></a>
+<!--contact-->
+        <div class="contact" id="form">
+            <h1 style="margin-top:2em;">Contact us</h1>
+            <hr style="width:98%;height:3px;border:0;background:#ffcccc;">
+            <form>
+            <input type="text" name="name" id="nameid" placeholder="your name please..."/><br>
+            <input type="text" name="email" id="emailid" placeholder="your email..."/><br>
+            <input type="text" name="reason" id="reasonid" placeholder="reason..."/><br>
+            <textarea>description...</textarea><br>
+            <input type="submit" value="submit">
+        </form>
+        </div>
+
+<a name="members"></a>
+<!--members-->
+        <div class="member">
+            <h1>Members</h1>
+            <hr>
+            <div class="memimg">
+                <img src="image/man.png" class="memcard" alt="avatar" style="width:100%;">
+                <div class="name">
+                    <div class="text">Bhaskar kishor</div>
+                </div>
+            </div>
+            <div class="memimg">
+                <img src="image/man.png" class="memcard" alt="avatar" style="width:100%;">
+                <div class="name">
+                    <div class="text">Bhaskar kishor</div>
+                </div>
+            </div>
+        </div>
+
+        <footer style="text-align:center;background:#131313;font-family:courier;color:aliceblue;padding:2em;font-size:15px;">
+            copyright lies with web & design society
+        </footer>
+
+<!--scripts-->
+        <script>
+        function openNav() {
+            document.getElementById("navmenu").style.width="100%";
+        }
+        function closeNav() {
+            document.getElementById("navmenu").style.width="0";
+        }
+        </script>
+
+
+    </body>
+</html>
